@@ -7,12 +7,12 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class MyJokeResponse {
-  public String joke;
+public class SpeechResponse {
+  public String answer;
   public String originalPrompt;
 
-  public MyJokeResponse(String joke, String originalPrompt) {
-    this.joke = joke;
+  public SpeechResponse(String answer, String originalPrompt) {
+    this.answer = answer;
     this.originalPrompt = originalPrompt;
   }
 }

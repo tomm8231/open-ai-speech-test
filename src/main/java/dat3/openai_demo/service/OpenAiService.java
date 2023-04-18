@@ -1,7 +1,7 @@
 package dat3.openai_demo.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import dat3.openai_demo.dtos.MyJokeResponse;
+import dat3.openai_demo.dtos.SpeechResponse;
 import dat3.openai_demo.dtos.OpenApiResponse;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
@@ -22,11 +22,11 @@ public class OpenAiService{
 
   String URL = "https://api.openai.com/v1/completions";
 
-  String FIXED_PROMPT = "Give me a cool joke involving: ";
+  String FIXED_PROMPT = "Please answer the question: ";
 
   WebClient client = WebClient.create();
 
-  public MyJokeResponse getAJoke(String prompt) throws URISyntaxException {
+  public SpeechResponse getAnAnswer(String prompt) throws URISyntaxException {
 
     String inputPrompt = FIXED_PROMPT + prompt;
 
@@ -57,8 +57,8 @@ public class OpenAiService{
             .retrieve()
             .bodyToMono(OpenApiResponse.class)
             .block();
-    String joke = response.choices.get(0).text;
-    return new MyJokeResponse(joke,inputPrompt);
+    String answer = response.choices.get(0).text;
+    return new SpeechResponse(answer,inputPrompt);
   }
 
 }

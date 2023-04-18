@@ -55,6 +55,12 @@
             <artifactId>reactor-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>com.microsoft.cognitiveservices.speech</groupId>
+            <artifactId>client-sdk</artifactId>
+            <version>1.27.0</version>
+        </dependency>
     </dependencies>
 
     <build>
