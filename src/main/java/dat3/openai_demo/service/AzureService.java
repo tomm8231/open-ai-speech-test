@@ -60,15 +60,6 @@ public class AzureService {
 
     SpeechSynthesizer speechSynthesizer = new SpeechSynthesizer(speechConfig);
 
-    /*// Get text from the console and synthesize to the default speaker.
-    System.out.println("Enter some text that you want to speak >");
-    String text = new Scanner(System.in).nextLine();
-    if (text.isEmpty())
-    {
-      return;
-    }
-
-     */
 
     SpeechSynthesisResult speechSynthesisResult = speechSynthesizer.SpeakTextAsync(response).get();
 
